@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Bag from "./routes/Bag.jsx";
 import Home from './routes/Home.jsx'
 import Sajal from "./routes/Sajal.jsx";
+import {Provider} from "react-redux";
+import myntrastore from "./strore/index.js";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={myntrastore}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
 );
 
